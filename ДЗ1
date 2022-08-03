@@ -1,1 +1,76 @@
 
+a = "hello"
+b = "world"
+print(f"{a}, {b}")
+num_1 = int(input("введите любое число:"))
+num_2 = int(input("введите любое число еще раз"))
+print(f"ты выбрал номер {num_1} и {num_2}")
+слово = input("введите любое слово:" )
+print(f"{слово} - это хороший выбор" )
+#-----------------------------2
+
+time = int(input("введите время в секундах: "))
+hours = time // 3600
+minutes = time // 60 - hours * 60
+seconds = time % 60
+print(F"{hours:02}:{minutes:02}:{seconds:02}")
+#-----------------------------3
+
+print("Привет")
+
+n = input("Введите число: ")
+
+print(f"{n} + {n + n} + {n + n + n} = {int(n) + int (n + n) + int(n + n + n)}")
+#--------------------------------4
+
+num_init = int(input("введите целое положительное число:"))
+greatest_dig = 0
+num = num_init
+
+while num > 0:
+    digit = num % 10
+    if digit > greatest_dig:
+        greatest_dig = digit
+        if greatest_dig == 9:
+            break
+    num = num // 10
+print(f"наибольшая цифра в числе{num_init} равна {greatest_dig}")
+
+#----------------------------------5
+revenue = float(input("введите значение выручки (рубли) - "))
+cost = float(input("введите значение издержек (рубли) - "))
+result = revenue - cost
+if result > 0:
+    print(f"поздравляем! ваша компания работает с прибылью {result} рублей")
+    print(f"рентабельность выручки составила {100 *(result/ cost):.1f}%")
+    personal_n = int(input("сколько работает сотрудников в вашей компании?"))
+    print(f"если вы раздадите прибыль компании,то каждый получит по {result / personal_n:.3f} рублей")
+elif result > 0:
+    print(f"увы ,ваша компания работает с убытком {-result} рублей .старайтесь лучше!")
+else:
+    print("ноль это тоже не плохой результат. попроси удруга денег в долг.")
+
+#-----------------------------------6
+while True:
+    days = 1
+    start_km = float(input("стартовый результат"))
+    last_km = float(input("финальный результат"))
+    if start_km > 0 and last_km >= 0:
+        while start_km < last_km:
+            start_km += start_km * 0.1
+            days += 1
+
+        print(f"спортсмен добьется результата за {days} дней ")
+        break
+    else:
+        print("результат должен быть больше нуля.стартовое число != 0. ")
+
+
+
+
+
+
+
+
+
+
