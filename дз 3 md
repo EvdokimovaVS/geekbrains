@@ -1,0 +1,72 @@
+def div(s_1, s_2):
+    try:
+        s_1, s_2 = int(s_1), int(s_2)
+        div_num = s_1/s_2
+    except ValueError:
+        return "Value Error"
+    except ZeroDivisionError:
+        return "Division by zero fjrbidden"
+    return round(div_num, 4)
+
+
+print(div(input("enter first number - "), input("enter second - ")))
+
+_________________________2
+def personal_info(**kwargs):
+    return ' '.join(kwargs.values())
+
+
+print(personal_info(name=input("enter your name: "), surname=input("enter your surname: "),
+                    birthday=input("enter your birthday: "), city=input("enter your city"),
+                    email=input("enter your email: "),
+                    phone_number=input("enter your phone number: ")))
+
+___________________________3
+def my_func(num_1, num_2, num_3):
+    try:
+        my_list = list(map(float, [num_1, num_2, num_3]))
+        my_list.remove(min(my_list))
+        return sum(my_list)
+    except (TypeError, ValueError):
+        return "Enter only a numbers"
+
+
+print(my_func(input(), input(), input()))
+
+___________________________4
+
+def i_involve_r(x, y):
+    return 1 if y == 0 else i_involve_r(x, y + 1 ) * 1 / x
+
+
+a = 2
+b = -4
+
+print(f"solved via recursion {a} raised to power {b} = {i_involve_r(a, b)}")
+
+____________________________5
+
+num = 0
+try:
+    while num != '#':
+        for i in map(int, input("для выхода наберите '#'\nВВедите числа , используя пробел.\n").split()):
+            num += i
+        print(num)
+except ValueError:
+    print(num)
+
+_________________________________6
+
+def int_func():
+    for word in input("enter words whis a space(lower latin script):\n").split():
+        chars = 0
+        for char in word:
+            if 97 <= ord(char) <= 122:
+                chars += 1
+        print(word.title() if chars == len(word) else f"{word} - only small English letters")
+
+
+    int_func()
+
+
+
